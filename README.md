@@ -72,34 +72,46 @@ Methods
 ``` js
 nodio.AddNewItem(credentials, item, callback);
 ```
+
 Callback receives two arguments: `(err, item_info)`
+
 [Relevant Podio API docs](https://developers.podio.com/doc/items/add-new-item-22362).
 
 ```js
 nodio.getItem (item_id, callback);
 ```
+
 Callback receives two arguments: `(err, item)`
+
 [Relevant Podio API docs](https://developers.podio.com/doc/items/get-item-22360).
 
 ```js
 nodio.filterItems (filters, callback);
 ```
+
 Callback receives two arguments: `(err, results)`
+
 `results` is an object with a property "items", which is an array of the matching items.
+
 [Relevant Podio API docs](https://developers.podio.com/doc/items/filter-items-4496747).
 
 ```js
 nodio.getCommentsOnItem (item_id, callback);
 ```
+
 Callback receives two arguments: `(err, comments)`.
+
 `comments` is an array of comment objects
+
 [Relevant Podio API docs](https://developers.podio.com/doc/comments/get-comments-on-object-22371).
 
 
 ```js
 nodio.addCommentToItem (item_id, comment_text, callback);
 ```
+
 Callback receives two arguments: `(err, comment_info)`, `comment_info` includes comment ID.
+
 [Relevant Podio API docs](https://developers.podio.com/doc/comments/add-comment-to-object-22340).
 
 
