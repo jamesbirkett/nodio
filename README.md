@@ -69,10 +69,37 @@ npm install nodio
 Methods
 -------
 
+###### Add New Item
 ``` js
-nodio.AddNewItem(credentials, item, callback);
+nodio.addNewItem(credentials, item, callback);
 ```
-Callback receives two arguments: `(err, item_info)`
+Callback receives two arguments: `(err, item_info)`. [Podio Docs](https://developers.podio.com/doc/items/add-new-item-22362).
+
+###### Get Item
+```js
+nodio.getItem (item_id, callback);
+```
+Callback receives two arguments: `(err, item)`. [Podio Docs](https://developers.podio.com/doc/items/get-item-22360).
+
+###### Filter Items
+```js
+nodio.filterItems (filters, callback);
+```
+Callback receives two arguments: `(err, results)`, `results` is an object with a property "items", which is an array of the matching items. [Podio Docs](https://developers.podio.com/doc/items/filter-items-4496747).
+
+###### Get Comments On Item
+```js
+nodio.getCommentsOnItem (item_id, callback);
+```
+Callback receives two arguments: `(err, comments)`, `comments` is an array of comment objects. [Podio Docs](https://developers.podio.com/doc/comments/get-comments-on-object-22371).
+
+
+###### Add Comment To Item
+```js
+nodio.addCommentToItem (item_id, comment_text, callback);
+```
+Callback receives two arguments: `(err, comment_info)`, `comment_info` includes comment ID. [Podio Docs](https://developers.podio.com/doc/comments/add-comment-to-object-22340).
+
 
 To do
 -----
