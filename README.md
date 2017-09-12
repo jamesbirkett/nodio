@@ -16,7 +16,8 @@ var credentials = {
     client_secret: 'YOUR_CLIENT_TOKEN'
 };
 
-var nodio = require('nodio')(credentials);
+var Nodio = require('nodio');
+var nodio = new Nodio(credentials);
 
 // The item you want to push to Podio (fields defined in the respective app)
 var item = {
@@ -25,7 +26,7 @@ var item = {
     something_else: 'I love Celeste'
 };
 
-nodio.addNewItem(item, function(err, item_info){
+nodio.items.create(item, function(err, item_info){
     if(err){
         // Error
         console.log(err);
@@ -42,7 +43,7 @@ nodio.addNewItem(item, function(err, item_info){
 // Podio item id, obtained from an app item's dev section
 var item_id = APP_ITEM_ID;
 
-nodio.getItem(item_id, function (err, item_info) {
+nodio.items.get(item_id, function (err, item_info) {
     if(err){
         // Error
         console.log(err);
@@ -55,6 +56,14 @@ nodio.getItem(item_id, function (err, item_info) {
         console.log(item_id+" - "+title);
     }
 });
+```
+
+*n.b. the old methods will still work in this version, but will throw a warning and will be deprecated next version:*
+
+```
+nodio.addNewItem(item, function(err, item_info) {});
+nodio.getItem(item_id, function (err, item_info) {});
+```
 
 
 ```
